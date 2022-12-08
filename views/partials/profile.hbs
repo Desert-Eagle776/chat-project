@@ -1,0 +1,27 @@
+<link rel="stylesheet" href="css/profile.css">
+
+<title>{{this.title}}</title>
+
+<form action="/adding_an_avatar" method="post" enctype="multipart/form-data">
+    {{#each currentUser}}
+    <img src="./image/{{this.avatar}}" alt="Avatarka" />
+    <h1>Ім'я: {{this.user_name}}</h1>
+
+    <input type="hidden" name="id" value="{{this.id}}">
+    {{/each}}
+
+    <p>Додати/змінити аватарку: </p>
+    <input type="file" name="file">
+    <button class="btn">Відправити</button>
+</form>
+
+{{#each lockedUsers}}
+<div class="locked_user">
+    <p>Заблоковані користувачі</p>
+    <span>{{this.user_name}}</span>
+
+    <a href="/unlock_user?id={{this.id}}">Розблокувати</a>
+</div>
+{{/each}}
+
+<a href="/main_chat" class="link">Повернутися до чату...</a>

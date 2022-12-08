@@ -1,0 +1,42 @@
+html {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: #f3e9d2;
+}
+
+form {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.locked_user {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    /* position: relative;
+    float: right; */
+}
+
+.btn {
+    color: #fff;
+    background: #ff0055;
+    border-radius: 15px;
+}
+
+.link {
+    color: #fff;
+    text-decoration: none;
+    border: 1px solid #000;
+    border-radius: 5px;
+    padding: 5px 10px 5px 10px;
+    background: linear-gradient(90deg, rgba(135, 191, 255, 1) 0%, rgba(63, 142, 252, 1) 95%);
+}

@@ -1,0 +1,19 @@
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<title>{{this.title}}</title>
+<form action="/registr" method="post">
+    <img src="img/telegram.svg" alt="logo_telegram" class="logo">
+
+    <h1 class="header_greetings">Ласкаво просимо!</h1>
+    <p class="text_action">Будь ласка, введіть ваш номер для авторизації</p>
+    <div class="block">
+        <input required type="text" placeholder="Введіть своє ім'я..." class="user_name" name="user_name">
+        <input required type="password" placeholder="Введіть свій пароль..." class="user_pass" name="user_pass">
+        <div class="block-button">
+            <button type"submit" class="btn">Зареєструватися</button>
+            <a href="/auth" class="btn_submit">Авторизуватися</a>
+        </div>
+    </div>
+</form>

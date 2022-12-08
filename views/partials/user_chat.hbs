@@ -1,0 +1,105 @@
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/user_chat.css">
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+<form action="/user_chat" method="post" enctype="multipart/form-data">
+
+    <div class="chat">
+        {{#each table_messages}}
+
+        <div class="message">
+            <span class="name">{{this.from_username}}: </span>
+            <span>{{this.message}}</span>
+
+            {{#if image}}
+            <a href="./file/{{filename.file}}"><img src="./file/{{filename.file}}" width="300" height="250" class="img"
+                    alt="file"></a>
+            {{/if}}
+
+            {{#if music}}
+            <audio controls>
+                <source src=" ./file/{{filename.file}}">
+            </audio>
+            {{/if}}
+
+            {{#if video}}
+            <video controls height="200" src="./file/{{filename.file}}"></video>
+            {{/if}}
+
+            {{#if this.like}}
+            <img src="img/icons/icon-active.png" id="{{this.id}}" alt="icon-heart" title="icon-active" @click="like">
+            {{else}}
+            <img src="img/icons/icon-static.png" id="{{this.id}}" alt="icon-heart" title="icon-static" @click="like">
+            {{/if}}
+
+            <a href="/delete_message?user_id={{this.to_user_id}}&message_id={{this.id}}" class="cross">&#10006;</a>
+            <a href="/change_message?user_id={{this.users_id}}&message_id={{this.id}}" class="change">Редагувати</a>
+
+            <data value="{{this.id}}"></data>
+
+        </div>
+        <input type="hidden" value="{{this.id}}" name="message_id">
+
+        {{/each}}
+
+
+
+        <input type="hidden" name="id" value="{{{to_user_id}}}">
+    </div>
+    <div class="form">
+        <input type="text" class="input_message" name="text_message" placeholder="Написати повідомлення...">
+        <button class="btn">Відправити</button>
+
+        <input type="file" class="file" name="file" placeholder="Прикріпити файл">
+        <button type="submit">Відправити</button>
+    </div>
+</form>
+
+<p><a href="/main_chat" class="link">&larr; Повернутися до чату...</a></p>
+
+<script>
+    const { createApp } = Vue
+
+    let reaction = false;
+    createApp({
+        data() {
+            return {
+                message: 'Hello Vue!'
+            }
+        },
+        methods: {
+            like(event) {
+                let data = document.querySelectorAll('data');
+
+                let eventId = event.target.id;
+                let dataArray = Array.from(data)
+
+                let findElement = dataArray.filter(el => el.value === eventId)
+
+                if (event.target.title === 'icon-static') {
+                    event.target.title = 'icon-active'
+                    event.target.src = 'img/icons/icon-active.png'
+                    reaction = true;
+                    console.log(reaction)
+                    fetch('/adding_reaction?reaction=' + reaction + '&&id=' + findElement[0].value, {
+                        method: 'post',
+                    })
+                        .then((response) => {
+                            console.log('Запрос успішний!')
+                        }).catch(error => {
+                            console.log(error)
+                        })
+                } else {
+                    event.target.title = 'icon-static'
+                    event.target.src = 'img/icons/icon-static.png'
+                    reaction = false;
+                    console.log(reaction)
+                    fetch('/remove_reaction?message_id=' + findElement[0].value, {
+                        method: 'post',
+                    })
+                }
+            }
+        }
+    }).mount('.chat')
+</script>

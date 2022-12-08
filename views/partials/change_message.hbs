@@ -1,0 +1,17 @@
+<link rel="stylesheet" href="css/change-message.css">
+
+<title>{{this.title}}</title>
+
+<div class="block">
+    <form action="/change_message" method="post">
+        {{#each message}}
+        <textarea name="textarea" class="text" cols="40" rows="10">{{this.message}}</textarea>
+        <button type="submit" class="btn">Змінити</button>
+
+        <input type="hidden" name="message_id" value="{{this.id}}">
+        <input type="hidden" name="user_id" value="{{this.to_user_id}}">
+
+        <a href="/user_chat?id={{this.to_user_id}}" class="link">&larr; Назад</a>
+        {{/each}}
+    </form>
+</div>

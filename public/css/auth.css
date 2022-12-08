@@ -1,0 +1,40 @@
+html {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: #faf0ca;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+}
+
+.block {
+    display: flex;
+    flex-direction: column;
+    margin-top: 16%;
+}
+
+.header {
+    color: #ff0000;
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+input {
+    width: 350px;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid #000;
+    padding: 5px 10px 5px 10px;
+    margin-bottom: 10px;
+}
+
+.auth_btn {
+    width: 150px;
+    color: #fff;
+    background: #ff0000;
+    border-radius: 10px;
+    margin-left: 60%;
+    padding: 5px 10px 5px 10px;
+}

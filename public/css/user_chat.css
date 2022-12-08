@@ -1,0 +1,88 @@
+body {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: linear-gradient(90deg, rgba(204, 72, 19, 1) 0%, rgba(237, 196, 179, 1) 50%, rgba(125, 0, 255, 0.7026960442380077) 100%);
+}
+
+.chat {
+    max-width: 900px;
+    height: 400px;
+    /* background: #ffdab9; */
+    /* background: radial-gradient(circle, rgba(249, 87, 56, 1) 0%, rgba(255, 237, 216, 1) 100%); */
+    background: #ffedd8;
+    border-radius: 10px;
+    margin: 70px 0px 0px 10%;
+    overflow: auto;
+}
+
+.message {
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: #000;
+    /* background: #fbc4ab; */
+    background: #b6ccfe;
+    border-radius: 10px;
+    padding: 10px 0px 10px 10px;
+    margin: 5px 5px 5px 10px;
+    max-width: 70%;
+}
+
+.form {
+    padding: 10px 0px 0px 10%;
+}
+
+.input_message {
+    width: 500px;
+    padding: 5px 10px 5px 10px;
+    border-radius: 10px;
+    background: #caf0f8;
+}
+
+.btn {
+    padding: 5px 10px 5px 10px;
+    border-radius: 10px;
+    background: #f7b801;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    color: #fff;
+}
+
+img {
+    cursor: pointer;
+    padding-left: 5px;
+}
+
+a {
+    display: inline-block;
+    position: relative;
+    color: #000;
+}
+
+.cross {
+    float: right;
+    color: #dc2f02;
+    padding: 0px 10px 0px 15px;
+    margin: -15px -14px 0px 0px;
+}
+
+.change {
+    float: right;
+    font-size: 14px;
+    color: #2a6f97;
+    margin-top: 10px;
+}
+
+.link {
+    color: #fff;
+    border: 1px solid #000;
+    border-radius: 5px;
+    background: #468faf;
+    padding: 5px 10px 5px 10px;
+    margin-top: 10px;
+}
+
+.img {
+    /* display: block; */
+    padding: 10px;
+}

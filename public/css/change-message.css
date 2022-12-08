@@ -1,0 +1,41 @@
+html {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: #fbc4ab;
+}
+
+.block {
+    max-width: 500px;
+    min-height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.text {
+    font-size: 16px;
+    border-radius: 10px;
+    background: #f8edeb;
+    padding: 10px;
+}
+
+.btn {
+    font-size: 16px;
+    background: #f35b04;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    border-radius: 15px;
+    padding: 5px 10px 5px 10px;
+}
+
+.link {
+    font-weight: 500;
+    color: #fff;
+    text-decoration: none;
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(204, 72, 19, 1) 0%, rgba(125, 0, 255, 0.7026960442380077) 100%);
+    border: 1px solid #000;
+    border-radius: 5px;
+    padding: 5px 10px 5px 10px;
+}

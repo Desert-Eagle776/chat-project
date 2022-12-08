@@ -1,0 +1,26 @@
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/main_chat.css">
+
+<title>{{this.title}}</title>
+<form action="/main_chat" method="post" enctype="multipart/form-data">
+    {{#each thisName}}
+    <p class="user_profile"><a href="/profile?id={{this.id}}" class="link">Профіль {{this.user_name}}!</a></p>
+    {{/each}}
+
+    <div class="block">
+        <div class="list_friends">
+            <p class="list_friends_text">Список друзів: </p>
+
+            <div class="image_position">
+                {{#each names}}
+                <img src="./image/{{this.avatar}}" alt="Avatarka" align="middle">
+                <a href="user_chat?id={{this.id}}">
+                    <p class="user_name">{{this.user_name}}</p>
+                    <a href="/locked_user?id={{this.id}}" class="user_block">Заблокувати</a>
+                    {{!-- {{/each}} --}}
+                </a>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+</form>
