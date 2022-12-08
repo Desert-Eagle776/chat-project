@@ -5,4 +5,5 @@ This project serves as a chat room where you can communicate with friends, acqua
 - ExpressJS,
 - AJAX,
 - Handlebars,
+- CSS3,
 - MySQL.
